@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Syarat 1a: Memiliki judul halaman ("Nama Mahasiswa") -->
+    <title>Sani Rahmatani - Pos Observasi Nebula Orion</title>
+    
+    <style>
+        /* Syarat 1c: Elemen desain (warna background, warna teks, tata letak) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0b0d17 0%, #1b2735 100%);
+            color: #e0e6ed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(100, 255, 218, 0.25);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 650px;
+            margin: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        h1 {
+            color: #64ffda;
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 2px solid rgba(100, 255, 218, 0.3);
+            padding-bottom: 12px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 18px;
+        }
+
+        .status-box {
+            background-color: rgba(10, 25, 47, 0.85);
+            border-left: 4px solid #64ffda;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #a8b2d1;
+        }
+
+        button {
+            background-color: #64ffda;
+            color: #0a192f;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #4cd9b7;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Syarat 1b: Minimal 1 heading -->
+        <h1>Pos Observasi Nebula Orion</h1>
+
+        <!-- Syarat 1b: Minimal 3 paragraf -->
+        <p>
+            Selamat datang di catatan harian Stasiun Orbit Alpha-7 yang mengapung sejauh 1.344 tahun cahaya dari Bumi. Dari jendela kaca observatorium utama, pancaran gas ungu dan biru dari Nebula Orion terlihat berpendar terang menyelimuti gugusan bintang muda yang baru lahir.
+        </p>
+
+        <p>
+            Setiap siklus rotasi, kru peneliti bertugas memantau anomali gravitasi serta mengumpulkan sampel debu kosmik menggunakan lengan robotik eksternal. Suasana di dalam kabin selalu tenang, hanya ditemani dengungan lembut mesin oksigen dan cahaya indikator panel kendali.
+        </p>
+
+        <p>
+            Meskipun jarak menuju planet asal terasa begitu jauh, keindahan alam semesta di luar sana selalu menjadi pengingat betapa luasnya ruang yang masih menunggu untuk dijelajahi oleh imajinasi manusia.
+        </p>
+
+        <!-- Area untuk menampilkan perubahan teks dan waktu dari JavaScript -->
+        <div class="status-box" id="log-status">
+            Status Sistem: Menunggu perintah pemindaian sinyal...
+        </div>
+
+        <!-- Syarat 2: 1 tombol yang menjalankan JavaScript saat diklik -->
+        <button onclick="jalankanPemindaian()">Aktifkan Pemindai Kosmik</button>
+    </div>
+
+    <script>
+        function jalankanPemindaian() {
+            // Mengambil waktu & tanggal saat ini
+            const sekarang = new Date();
+            const waktuFormat = sekarang.toLocaleString('id-ID', {
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            });
+
+            // Mengubah teks di halaman & menampilkan tanggal/jam
+            const kotakStatus = document.getElementById("log-status");
+            kotakStatus.innerHTML = 
+                "<strong>[SINYAL DITERIMA]</strong> Gelombang radio stabil terdeteksi dari sektor Orion.<br>" +
+                "Waktu Pencatatan: " + waktuFormat;
+            kotakStatus.style.color = "#64ffda";
+
+            // Menampilkan pesan alert
+            alert("Pemindaian selesai! Log waktu berhasil diperbarui pada halaman.");
+        }
+    </script>
+
+</body>
+</html>
